@@ -8,7 +8,13 @@
     position: absolute;
 }
 
+h1 {
+    font-size: clamp(2rem, 3vw, 3rem);
+  }
 
+h2 {
+    font-size: clamp(1rem, 4vw, 30px);
+  }
 #central{
     text-align: center;
     width: 50%;
@@ -18,20 +24,51 @@
     height: 400px;
 }
 
-.image{
-    
+.link{
+    justify-content: flex-end;
+}
+.link img{
+    width: 10%;
+    height: 10%;
+    margin-inline: 2rem;
+    transition: transform 0.3s, filter 0.3s, opacity 0.3s;
+    border-radius: 90%;
 }
 
+.link img:hover {
+    transform: scale(1.5);
+    opacity: 1; 
+    filter: none; 
+    box-shadow: 0 0 1rem whitesmoke;
+}
+
+/* When a link is being hovered the others are going to be blurred */
+.link:hover ~ .link img, 
+.link:hover ~ .link img {
+    opacity: 0.2; 
+    filter: blur(5px);
+}
 
 .tab{
     background-color: transparent;
     backdrop-filter: blur(20px);
+
     background-image: linear-gradient(
         to left,
         transparent,
         black,
         transparent
     );
+    box-shadow: 0 0 1rem black;
+}
+
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }
 
 #header{
