@@ -1,5 +1,7 @@
 #background{
     background-color: rebeccapurple;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 #bottom{
