@@ -58,16 +58,15 @@ h2 {
 
 
 .tab{
-    background-color: transparent;
-    backdrop-filter: blur(20px);
-
+    background-color: rgba(0,0,0,0.0);
     background-image: linear-gradient(
         to left,
-        transparent,
-        black,
-        transparent
+        rgba(0,0,0,0.0), 
+        rgba(0, 0, 0, 0.9),
+        rgba(0,0,0,0.0)
     );
     box-shadow: 0 0 1rem black;
+    backdrop-filter: blur(20px);
 }
 
 
@@ -168,20 +167,10 @@ h2 {
     }
 }
 
-@media not all and (min-resolution: 0.001dpcm) and (min-color-index: 0) {
-    @supports (-webkit-backdrop-filter: blur(20px)) {
-        .tab{
-            background-color: rgba(248, 248, 248, 0.1);
-            background-image: linear-gradient(
-                        to left,
-                        rgba(0, 0, 0, 0.6), 
-                        rgba(138, 43, 226,0.5),
-                        rgba(0, 0, 0, 0.6)
-                    );
-            box-shadow: 0 0 1rem black;
-            -webkit-backdrop-filter: blur(20px);
-            backdrop-filter: blur(20px);
-            box-shadow: 0 0 1rem black;
-        }
+
+@supports (-webkit-backdrop-filter: blur(20px)) {
+    .tab {
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
     }
 }
